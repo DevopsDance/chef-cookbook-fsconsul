@@ -13,6 +13,7 @@ execute 'go get' do
               GOBIN: node['go']['gobin'],
               PATH: "#{node['go']['install_dir']}/go/bin:#{ENV['PATH']}"
   not_if { ::File.exist?("#{node['go']['gobin']}/fsconsul-#{node['fsconsul']['version']}") }
+  action :run
 end
 
 execute 'go install' do
@@ -21,4 +22,10 @@ execute 'go install' do
               GOBIN: node['go']['gobin'],
               PATH: "#{node['go']['install_dir']}/go/bin:#{ENV['PATH']}"
   not_if { ::File.exist?("#{node['go']['gobin']}/fsconsul-#{node['fsconsul']['version']}") }
+  action :run
+end
+
+link '/usr/local/bin/fsconsul' do
+  to "#{node['go']['gobin']}/fsconsul-#{node['fsconsul']['version']}"
+  action :create
 end

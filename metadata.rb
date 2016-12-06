@@ -3,7 +3,7 @@ maintainer 'DevopsDance'
 maintainer_email 'team@devops.dance'
 license 'All rights reserved'
 description 'Installs and configures FSConsul'
-version '0.1.0'
+version '0.1.1'
 source_url 'https://github.com/DevopsDance/chef-cookbook-fsconsul'
 issues_url 'https://github.com/DevopsDance/chef-cookbook-fsconsul/issues'
 
